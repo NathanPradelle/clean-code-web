@@ -1,0 +1,82 @@
+.list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+.tag-filter-cloud {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 3rem;
+}
+
+.tag-pill {
+    background: white;
+    border: 1px solid #e5e7eb;
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.tag-pill.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Styles des tuiles individuelles */
+.card-tile {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    border-left: 6px solid #e5e7eb;
+}
+
+.cat-1 {
+    border-left-color: #ef4444;
+}
+
+.cat-2,
+.cat-3 {
+    border-left-color: #f59e0b;
+}
+
+.cat-4,
+.cat-5,
+.cat-6 {
+    border-left-color: #3b82f6;
+}
+
+.cat-7,
+.cat-8 {
+    border-left-color: #10b981;
+}
+
+.card-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #eef2ff;
+    /* Bleu très clair */
+    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: 9999px;
+    /* Pill style */
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: lowercase;
+    border: 1px solid #c7d2fe;
+    margin-top: 10px;
+}
+
+.card-tag::before {
+    margin-right: 2px;
+    opacity: 0.7;
+}

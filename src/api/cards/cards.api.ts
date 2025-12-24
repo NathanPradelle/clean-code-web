@@ -1,4 +1,4 @@
-import { getJson } from "../httpClient";
+import { getJson, postJson } from "../httpClient";
 import { CardApi, CreateCardApi } from "../cards/cards.type";
 import { mapCardApiToDomain } from "../cards/cards.mapper";
 import { Card } from "../../domain/card";
@@ -12,7 +12,7 @@ import { Card } from "../../domain/card";
  * @returns La liste des cartes.
  */
 export async function fetchCards(tag?: string): Promise<Card[]> {
-    const endpoint = tag ? `/cards?tag=${tag}` : '/cards';
+    const endpoint = tag ? `/cards?tags=${tag}` : '/cards';
 
     const rawCards = await getJson<CardApi[]>(endpoint);
 
@@ -28,18 +28,6 @@ export async function fetchCards(tag?: string): Promise<Card[]> {
  * @returns La carte créée.
  */
 export async function createCard(cardToCreate: CreateCardApi): Promise<Card> {
-    const res = await fetch('/cards', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(cardToCreate),
-    });
-
-    if (!res.ok) {
-        throw new Error(`HTTP ${res.status}`);
-    }
-
-    const cardApi = (await res.json()) as CardApi;
+    const cardApi = await postJson<CardApi>('/cards', cardToCreate);
     return mapCardApiToDomain(cardApi);
 }

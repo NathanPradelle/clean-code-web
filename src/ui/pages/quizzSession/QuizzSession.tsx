@@ -10,7 +10,7 @@ export const QuizSession: React.FC = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // Chargement des cartes du jour au montage 
+        //Chargement des cartes du quizz du jour
         fetchQuizzCards().then((data) => {
             setCards(data);
             setIsLoading(false);

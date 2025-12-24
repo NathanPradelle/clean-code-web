@@ -12,7 +12,7 @@ import { Card } from "../../domain/card";
  * @returns La liste des cartes.
  */
 export async function fetchCards(tag?: string): Promise<Card[]> {
-    const endpoint = tag ? `/cards?tag=${tag}` : '/cards';
+    const endpoint = tag ? `/cards?tags=${tag}` : '/cards';
 
     const rawCards = await getJson<CardApi[]>(endpoint);
 

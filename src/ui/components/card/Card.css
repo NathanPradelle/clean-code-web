@@ -1,0 +1,82 @@
+.flashcard-container {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+.card-content {
+    background: white;
+    min-height: 300px;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease;
+}
+
+.card-content h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1em;
+}
+
+.card-content p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2rem;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.btn-success {
+    background-color: var(--secondary-color);
+    color: white;
+    flex: 1;
+}
+
+.btn-error {
+    background-color: #ef4444;
+    color: white;
+    flex: 1;
+}
+
+.btn-flip {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 25px;
+}
+
+.card-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #eef2ff;
+    /* Bleu très clair */
+    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: 9999px;
+    /* Pill style */
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: lowercase;
+    border: 1px solid #c7d2fe;
+    margin-top: 10px;
+}
+
+.card-tag::before {
+    margin-right: 2px;
+    opacity: 0.7;
+}

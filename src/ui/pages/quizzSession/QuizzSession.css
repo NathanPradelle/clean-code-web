@@ -1,0 +1,41 @@
+.quiz-session {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.quiz-finished {
+    padding: 5rem 1rem;
+    text-align: center;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    max-width: 500px;
+    margin: 4rem auto;
+}
+
+.quiz-finished h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.quiz-finished p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}

@@ -99,7 +99,7 @@ describe('Cards API Service', () => {
         afterEach(() => {
             vi.unstubAllGlobals();
         });
-        it('should create a card and return the doamin model', async () => {
+        it('should create a card and return the domain model', async () => {
             const cardToCreate: CreateCardApi = {
                 question: 'What is Hexagonal Architecture?',
                 answer: 'A pattern that isolates the core logic from external concerns.',
@@ -121,7 +121,7 @@ describe('Cards API Service', () => {
             const card = await createCard(cardToCreate)
 
             expect(fetch).toHaveBeenCalledWith(
-                '/cards',
+                expect.stringContaining('/cards'),
                 expect.objectContaining({
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },

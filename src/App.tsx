@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Navbar } from './ui/components/navbar/Navbar';
-import { HomePage } from './ui/pages/homepage/HomePage';
-import { QuizSession } from './ui/pages/quizzSession/QuizzSession';
-import { CreateCardPage } from './ui/pages/cards/CreateCardPage';
-import { CardsListPage } from './ui/pages/cards/CardsListPage';
+import { Navbar } from './features/navbar/components/Navbar';
+import { HomePage } from './features/homepage/pages/HomePage';
+import { QuizSession } from './features/quizz/pages/QuizzSession';
+import { CreateCardPage } from './features/cards/pages/CreateCardPage';
+import { CardsListPage } from './features/cards/pages/CardsListPage';
 
 
 export const App = () => {

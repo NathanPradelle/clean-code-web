@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card } from '@/domain/card';
+import { Card } from '@/domain/cards/card';
 import { fetchCards } from '@/api/cards/cards.api';
 import './CardsList.css';
 

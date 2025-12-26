@@ -21,6 +21,7 @@ export interface CardApi {
     answer: string;
     tag?: string;
     category: CardCategoryApi;
+    userId: string;
 }
 /**
  * Données requises pour la création d'une nouvelle carte via l'API.
@@ -29,4 +30,5 @@ export interface CreateCardApi {
     question: string;
     answer: string;
     tag?: string; // Optionnel
+    userId: string
 }

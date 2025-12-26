@@ -1,5 +1,5 @@
 import { getJson } from "../httpClient";
-import { Card } from "../../domain/card";
+import { Card } from "../../domain/cards/card";
 import { CardApi } from "../cards/cards.type";
 import { mapCardApiToDomain } from "../cards/cards.mapper";
 import { AnswerCardApi } from '../learning/learning.type';

@@ -104,6 +104,7 @@ describe('Cards API Service', () => {
                 question: 'What is Hexagonal Architecture?',
                 answer: 'A pattern that isolates the core logic from external concerns.',
                 tag: 'tag',
+                userId: '1',
             };
 
             const mockApiResponse = {
@@ -141,7 +142,7 @@ describe('Cards API Service', () => {
                 status: 400,
             });
 
-            const invalidCard = { question: '', answer: '', tag: '' };
+            const invalidCard = { question: '', answer: '', tag: '', userId: '' };
 
             // On vérifie que la promesse est rejetée avec le bon message
             await expect(createCard(invalidCard)).rejects.toThrow('HTTP 400');

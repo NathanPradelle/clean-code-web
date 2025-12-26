@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from '../../../domain/card';
+import { Card } from '../../../domain/cards/card';
 import { fetchQuizzCards, answerCard } from '../../../api/learning/learning.api';
 import { Flashcard } from '../../components/card/Card';
 import './QuizzSession.css';

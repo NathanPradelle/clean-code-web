@@ -1,5 +1,5 @@
 import { CardApi, CardCategoryApi } from "../cards/cards.type";
-import { Card } from "../../domain/card";
+import { Card } from "../../domain/cards/card";
 
 //Permet de mapper les categories de l'api vers les categories du domaine
 const categoryMap: Record<CardCategoryApi, number> = {
@@ -22,5 +22,6 @@ export function mapCardApiToDomain(api: CardApi): Card {
         tag: api.tag,
         category: categoryMap[api.category],
         isLearned: api.category === 'DONE',
+        userId: api.userId || '1', //Simule un utilisateur
     }
 }

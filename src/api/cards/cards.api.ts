@@ -1,7 +1,7 @@
 import { getJson, postJson } from "../httpClient";
 import { CardApi, CreateCardApi } from "../cards/cards.type";
 import { mapCardApiToDomain } from "../cards/cards.mapper";
-import { Card } from "../../domain/card";
+import { Card } from "../../domain/cards/card";
 
 /**
  * GET /cards

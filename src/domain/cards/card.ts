@@ -7,4 +7,5 @@ export interface Card {
     tag?: string;
     category: number;
     isLearned: boolean;
+    userId: string;
 }

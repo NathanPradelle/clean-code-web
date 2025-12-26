@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card } from '../../../domain/card';
+import { Card } from '../../../domain/cards/card';
 import './Card.css';
 
 interface FlashcardProps {

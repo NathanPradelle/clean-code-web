@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createCard } from '@/api/cards/cards.api';
+import { getCurrentUser } from '@/api/users/users.api';
 import { CreateCardApi } from '@/api/cards/cards.type';
 import './CreateCard.css';
 
@@ -9,7 +10,8 @@ export const CreateCardPage: React.FC = () => {
     const [formData, setFormData] = useState<CreateCardApi>({
         question: '',
         answer: '',
-        tag: ''
+        tag: '',
+        userId: '',
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -19,6 +21,8 @@ export const CreateCardPage: React.FC = () => {
 
         try {
             //Appel à la fonction createCard
+            const user = await getCurrentUser();
+            formData.userId = user?.id || '1';
             await createCard(formData);
             //redirection vers la page de liste des fiches
             navigate('/cards');

@@ -10,7 +10,8 @@ describe('Cards Mapper', () => {
             question: 'What is DDD?',
             answer: 'Domain Driven Design',
             tag: 'Architecture',
-            category: 'SECOND'
+            category: 'SECOND',
+            userId: '1',
         };
 
         // Exécution du mapping
@@ -28,6 +29,7 @@ describe('Cards Mapper', () => {
             id: 'uuid-456',
             question: 'Finished?',
             answer: 'Yes',
+            userId: '1',
             category: 'DONE'
         };
 
@@ -42,6 +44,7 @@ describe('Cards Mapper', () => {
             id: 'uuid-789',
             question: 'No tag?',
             answer: 'No tag.',
+            userId: '1',
             category: 'FIRST'
         };
 

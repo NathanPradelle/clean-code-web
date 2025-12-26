@@ -14,6 +14,7 @@ git clone https://github.com/NathanPradelle/clean-code-web.git
 cd clean-code-web
 npm install
 npm run dev
+npm run test (pour les tests)
 ```
 
 ## Branching strategy

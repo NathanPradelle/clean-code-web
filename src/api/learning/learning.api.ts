@@ -1,4 +1,4 @@
-import { getJson } from "../httpClient";
+import { getJson, patchJson } from "../httpClient";
 import { Card } from "../../domain/cards/card";
 import { CardApi } from "../cards/cards.type";
 import { mapCardApiToDomain } from "../cards/cards.mapper";
@@ -25,15 +25,6 @@ export async function fetchQuizzCards(date?: string): Promise<Card[]> {
 export async function answerCard(cardId: string, isValid: boolean): Promise<void> {
     const payload: AnswerCardApi = { isValid };
 
-    const res = await fetch(`/cards/${cardId}/answer`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-    });
-
-    if (!res.ok) {
-        throw new Error(`HTTP ${res.status}`);
-    }
+    const res = await patchJson(`/cards/${cardId}/answer`, payload);
+    console.log(res);
 }

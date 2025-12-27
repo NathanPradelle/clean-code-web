@@ -19,12 +19,20 @@ export const QuizSession: React.FC = () => {
 
     const handleAnswer = async (isValid: boolean) => {
         const currentCard = cards[currentIndex];
+        setIsLoading(true); // Optionnel : indiquer que l'envoi est en cours
 
-        // Envoi de la réponse au serveur
-        await answerCard(currentCard.id, isValid);
+        try {
+            // Envoi de la réponse au serveur pour mise à jour de la catégorie [cite: 56, 57]
+            await answerCard(currentCard.id, isValid);
 
-        // Passage à la carte suivante
-        setCurrentIndex((prev) => prev + 1);
+            // On ne passe à la carte suivante que si l'API a validé le changement
+            setCurrentIndex((prev) => prev + 1);
+        } catch (error) {
+            console.error("Erreur API:", error);
+            alert("Impossible de valider la réponse. Vérifiez votre connexion au serveur.");
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     if (isLoading) return <div>Chargement du quiz...</div>;
